@@ -3,6 +3,7 @@ evolving! ! !
 """
 
 
+# checks whether player types correct answer(yes/no)
 def verification(question_text):
     while True:
 
@@ -19,9 +20,20 @@ def verification(question_text):
             print("Please enter valid answer. (yes/no)")
 
 
+def instruction():
+    print("**** How to Play ****")
+    print()
+    print("The rules of the game goes here")
+    print()
+    print("Program continues")
+    print()
+
+
 # Main routine
-question = input("Have you played this game before? (yes/no): ")
-print(f"You have chosen {question}.")
-print()
-chill = verification("Are you having fun? ")
-print(f"You entered {chill}")
+played_before = verification("Have you played this game before? (yes/no): ")
+
+if played_before == "No":
+    instruction()
+
+else:
+    print("Program continues")
